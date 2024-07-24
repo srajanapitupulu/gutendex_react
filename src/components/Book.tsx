@@ -1,18 +1,16 @@
-import React from 'react';
+import React from "react";
+import { BookType } from "../types/BookType";
 
 interface BookProps {
-  book: {
-    id: number;
-    title: string;
-    author: string;
-  };
+  book: BookType;
 }
 
 const Book: React.FC<BookProps> = ({ book }) => {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+    <div className="w-full rounded overflow-hidden shadow-lg">
+      <img className="w-full" src={book.imageUrl} alt={book.title} />
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{book.title}</div>
+        <div className="font-bold text-l mb-2">{book.title}</div>
         <p className="text-gray-700 text-base">{book.author}</p>
       </div>
     </div>
